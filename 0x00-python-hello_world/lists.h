@@ -9,6 +9,7 @@
  * @n: integer
  * @next: points to the next node
  */
+
 typedef struct listint_s
 {
   int n;
