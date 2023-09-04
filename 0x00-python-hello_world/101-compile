@@ -1,3 +1,2 @@
 #!/bin/bash
-file = "$PYFILE"
-python3 -m compileall -d file
+python3 -m compileall -d $PYFILE
