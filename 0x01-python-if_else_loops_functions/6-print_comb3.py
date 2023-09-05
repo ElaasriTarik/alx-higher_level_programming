@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+for o in range(0, 9):
+    for i in range(0, 10):
+        if o < i:
+            if o == 8:
+                print("{}{}".format(o, i))
+                continue
+            print("{}{}, ".format(o, i), end="")
