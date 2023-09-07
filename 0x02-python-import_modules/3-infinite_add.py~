@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+if __name__ == "__main__":
+    import sys
+    argv = sys.argv
+    x = len(argv)
+    res = 0
+    while x > 0:
+        res += int(argv[x])
+        x -= 1
+    print("{}".format(res))
