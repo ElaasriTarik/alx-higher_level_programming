@@ -1,10 +1,8 @@
 #!/usr/bin/python3
-import hidden_4
 if __name__ == "__main__":
-    hidden = dir(hidden_4)
-    length = len(hidden)
-    x = 0
-    while x < length:
-        if hidden[x][0:2] != "__":
-            print(hidden[x])
-            x += 1
+    import hidden_4
+    names = dir(hidden_4)
+    count = len(names)
+    for n in range(0, count):
+        if names[n][0:2] != "__":
+            print(names[n])
