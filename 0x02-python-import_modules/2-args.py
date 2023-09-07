@@ -12,4 +12,3 @@ if __name__ == "__main__":
         print("{}: {}".format(1, sys.argv[1]))
     else:
         print("arguments.")
-    
