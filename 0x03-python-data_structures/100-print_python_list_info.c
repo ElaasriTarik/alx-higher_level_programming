@@ -4,7 +4,7 @@
 
 void print_python_list_info(PyObject *p) {
     PyObject *item;
-    Py_ssize_t size, allocated, i;
+    Py_ssize_t size, allocated, i = 0;
     PyListObject *list = (PyListObject *)p;
     size = PyList_Size(p);
     allocated = list->allocated;
@@ -13,11 +13,12 @@ void print_python_list_info(PyObject *p) {
         PyErr_Format(PyExc_TypeError, "Object is not a list\n");
         return;
     }
-    printf("[*] Size of the Python List = %d\n", size);
-    printf("[*] Allocated = %d\n", allocated);
-    for (i = 0; i < size; i++)
+    printf("[*] Size of the Python List = %zd\n", size);
+    printf("[*] Allocated = %zd\n", allocated);
+    while (i < size)
     {
         item = PyList_GetItem(p, i);
         printf("Element %zd: %s\n", i, Py_TYPE(item)->tp_name);
+	i++;
     }
 }
