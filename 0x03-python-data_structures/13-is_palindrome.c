@@ -21,10 +21,15 @@ int is_palindrome(listint_t **head)
   while (first != x && x >= 0)
     {
       if (arr[first] != arr[x])
-	return (0);
+	{
+	  free(arr);
+	  return (0);
+	}
+
       x--;
       first++;
     }
+  free(arr);
   return (1);
 }
 
