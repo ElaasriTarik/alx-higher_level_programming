@@ -2,7 +2,19 @@
 #include <stdlib.h>
 #include <string.h>
 #include "lists.h"
+
+/**
+ *countList - counts the elemnts of a list
+ *@head: head of list
+ *Return: int
+ */
 int countList(listint_t **head);
+
+/**
+ *is_palindrome - checks for palindrome
+ *@head: head of list
+ *Return: 1 or 0
+ */
 
 int is_palindrome(listint_t **head)
 {
@@ -35,12 +47,13 @@ int is_palindrome(listint_t **head)
 
 
 int countList(listint_t **head) {
-    int count = 0;
-    listint_t* curr = *head;
+  int count = 0;
+  listint_t* curr = *head;
 
-    while (curr != NULL) {
-        count++;
-        curr = curr->next;
-    }
-    return (count);
+  while (curr != NULL)
+  {
+    count++;
+    curr = curr->next;
+  }
+  return (count);
 }
