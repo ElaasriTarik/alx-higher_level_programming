@@ -4,6 +4,6 @@ def search_replace(my_list, search, replace):
     for i in range(len(my_list)):
         if my_list[i] == search:
             n_list.append(replace)
-        else:
+            i += 1
         n_list.append(my_list[i])
     return (n_list)
