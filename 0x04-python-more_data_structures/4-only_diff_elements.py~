@@ -1,0 +1,16 @@
+#!/usr/bin/python3
+def only_diff_elements(set_1, set_2):
+    ele = []
+    for s2 in set_2:
+        ex = False
+        for s1 in set_1:
+            if s2 == s1:
+                ex = True
+        if ex is False:
+            ele.append(s2)
+        for s2 in set_2:
+            if s2 == s1:
+                ex = True
+        if ex is False:
+            ele.append(s1)
+    return (ele)
