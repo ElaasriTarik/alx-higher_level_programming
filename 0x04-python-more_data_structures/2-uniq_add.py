@@ -1,19 +1,8 @@
 #!/usr/bin/python3
 def uniq_add(my_list=[]):
-    list = []
+    list = set(my_list)
     res = 0
-    list.append(my_list[0])
-    for n in my_list:
-        if is_in(n, list) is False:
-            list.append(n)
-        list.append(0)
     for n in list:
         res += n
     return (res)
 
-
-def is_in(n, list):
-    for i in list:
-        if n == i:
-            return (True)
-    return (False)
