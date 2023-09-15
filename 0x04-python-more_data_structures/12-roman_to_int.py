@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 def roman_to_int(roman_string):
     is_str = True
     for c in roman_string:
