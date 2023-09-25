@@ -17,10 +17,11 @@ def roman_to_int(roman_string):
             n = roman_obj[r]
             if this == r:
                 if n > prev:
-                    total -= prev
-                    total += n    
-                else:
                     total += n
+                    total -= prev
                     prev = n
+                else:
+                    total -= n
+                prev = n
 
     return (total)
