@@ -21,7 +21,7 @@ class Square:
     def position(self, value):
         if isinstance(value, tuple) and \
            isinstance(value[0], int) and isinstance(value[0], int) and \
-           len(value) is 2 and \
+           len(value) == 2 and \
            value[0] >= 0 and value[1] >= 0:
             self.__position = value
         else:
@@ -44,11 +44,11 @@ class Square:
 
     def my_print(self):
         ss = self.__size
-        if ss <= 0:
-            print()
-        else:
+        if ss > 0:
             for y in range(self.__position[1]):
                 print()
-            for x in range(self.__size):
+            for x in range(ss):
                 print(' ' * self.__position[0], end='')
-                print('#' * self.__size)
+                print('#' * ss)
+        else:
+            print()
