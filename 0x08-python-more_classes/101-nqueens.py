@@ -34,7 +34,6 @@ def state(x, y):
     """approve or reject the solution.."""
     if (check_spot(y)):
         return False
-    k = 0
     for k in range(x):
         if abs(board[k][1] - y) == abs(k - x):
             return False
