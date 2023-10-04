@@ -50,6 +50,5 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return (rect)
 
-        rect += "\n".join("#" * self.__width
-                                for j in range(self.__height))
+        rect += "\n".join("#" * self.__width for j in range(self.__height))
         return (rect)
