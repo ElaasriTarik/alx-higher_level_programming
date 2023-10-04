@@ -18,11 +18,11 @@ for x in range(spots):
 # fill the y spot, after checking if that line is queen free
 def check_spot(q):
     for y in range(spots):
-        if board[y][1] == y:
+        if board[y][1] == q:
             return (True)
-        return (False)
+    return (False)
 
-def clear(x):
+def clear_s(x):
 # clear spot..
     for s in range(x, spots):
         board[s][1] = None
@@ -40,7 +40,7 @@ def state(x, y):
 def queen(x):
 # recursive function to find the solution
     for y in range(spots):
-        clear(x)
+        clear_s(x)
         if state(x, y):
             board[x][1] = y
             if (x == spots - 1):
