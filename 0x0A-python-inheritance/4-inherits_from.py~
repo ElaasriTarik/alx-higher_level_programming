@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+""" inherits_from """
+
+
+def inherits_from(obj, a_class):
+    """ return true or false """
+
+    if any(issubclass(type(obj), cls) for cls in a_class.mro()[1:]):
+        return (True)
+    return (False)
