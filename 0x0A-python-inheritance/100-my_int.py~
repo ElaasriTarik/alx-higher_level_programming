@@ -1,0 +1,18 @@
+#!/usr/bin/python3
+"""myInt class"""
+
+
+class MyInt(int):
+    """representation of MyInt """
+    
+    def __init__(self, value):
+        self.value = not value
+        super().__init__()
+
+    def __eq__(self, other):
+        """ calling the equality method """
+        return super().__ne__(other)
+
+    def __ne__(self, other):
+        """ calling the inequality method """
+        return super().__eq__(other)
