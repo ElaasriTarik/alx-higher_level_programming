@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """ square class """
 
 
@@ -9,6 +9,7 @@ class Square(Rectangle):
     """representation of square """
 
     def __init__(self, size):
+        """ initiating class """
         self.integer_validator("size", size)
         self.__size = size
         super().__init__(size, size)
