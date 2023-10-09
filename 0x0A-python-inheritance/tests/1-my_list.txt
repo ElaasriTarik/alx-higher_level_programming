@@ -4,6 +4,13 @@
 >>> m = __import__("1-my_list").__doc__
 >>> len(m) > 1
 True
+>>> c = __import__("1-my_list").MyList.__doc__
+>>> len(c) > 1
+True
+
+>>> mod = __import__("1-my_list").MyList.print_sorted.__doc__
+>>> len(mod) > 1
+True
 
 >>> l = MyList()
 >>> l.append(4)
@@ -17,13 +24,8 @@ True
 >>> print(l)
 [4, 3, 2, 1]
 
->>> c = __import__("1-my_list").MyList.__doc__
->>> len(c) > 1
-True
-
->>> mod = __import__("1-my_list").MyList.print_sorted.__doc__
->>> len(mod) > 1
-True
+>>> l.print_sorted()
+[1, 2, 3, 4]
 
 >>> issubclass(MyList, list)
 True
@@ -31,9 +33,6 @@ True
 >>> l = MyList()
 >>> l.print_sorted()
 []
-
->>> l.print_sorted()
-[1, 2, 3, 4]
 
 
 >>> l.print_sorted(1)
