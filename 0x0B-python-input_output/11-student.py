@@ -17,8 +17,9 @@ class Student:
                 if type(att) is not str:
                     stat = False
             if stat:
-                return ({k: getattr(self, k) for k in attrs\
-                        if hasattr(self, k)})
+                return ({k: getattr(self, k)\
+                         for k in attrs \
+                         if hasattr(self, k)})
         return (self.__dict__)
 
     def reload_from_json(self, json_data):
