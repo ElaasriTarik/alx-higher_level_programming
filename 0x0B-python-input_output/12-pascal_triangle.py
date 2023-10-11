@@ -12,11 +12,9 @@ def pascal_triangle(n):
     for i in range(n - 1):
         if i == 0:
             pascal.append([1])
-            prev = [1]
             continue
         if i == 1:
             pascal.append([1, 1])
-            prev = [1, 1]
 
         nxt = [1]
         ps = pascal[i]
