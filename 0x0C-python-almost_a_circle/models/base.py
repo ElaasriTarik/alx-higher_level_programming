@@ -96,3 +96,50 @@ class Base:
     def load_from_file_csv(cls):
         ''' load from file csv '''
         return ([])
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        turtle.bgcolor('black')
+        t = turtle.Turtle()
+        t.penup()
+        t.speed(0)
+        t.color('pink')
+        t.pensize(2)
+        t.goto(-300, 300)
+
+        for rect in list_rectangles:
+            t.pendown()
+            for x in range(2):
+                
+                t.forward(rect.width if rect.width > 100 else 200)
+                t.right(90)
+                t.forward(rect.height)
+                t.right(90)
+            t.penup()
+            if rect.width < 100:
+                move_by = 100
+            else:
+                move_by = rect.width + 30
+            x_cordinate = round(turtle.xcor(), 5)
+            turtle.goto(x_cordinate + move_by, 100)
+
+        ''' drawing square '''
+
+        t.goto(-300, 300)
+        for rect in list_squares:
+            t.pendown()
+            for x in range(2):
+
+                t.forward(rect.width)
+                t.right(90)
+                t.forward(rect.height)
+                t.right(90)
+            t.penup()
+            if rect.width < 100:
+                move_by = 100
+            else:
+                move_by = rect.width + 30
+            x_cordinate = round(turtle.xcor(), 5)
+            turtle.goto(x_cordinate + move_by, 100)
+
+        turtle.exitonclick()
