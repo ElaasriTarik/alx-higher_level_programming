@@ -78,13 +78,16 @@ class Rectangle(Base):
 
     def display(self):
         """ displays the triangle to the stdout """
-
-        rect = ""
-        hash = "#"
-        w = self.__width
-        h = self.__height
-        rect += "\n".join((self.x * " ") + (str(hash) * w) for j in range(h))
-        print(rect)
+        space = ' '
+        star = '#'
+        for y in range(self.y):
+            print()
+        for column in range(self.height):
+            for x in range(self.x):
+                print(space, end='')
+            for row in range(self.width):
+                print(star, end='')
+            print()
 
     def __str__(self):
         return ("[Rectangle] ({}) {}/{} - {}/{}".
