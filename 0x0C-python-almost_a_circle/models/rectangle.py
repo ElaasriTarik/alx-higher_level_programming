@@ -86,10 +86,8 @@ class Rectangle(Base):
         print(rect)
 
     def __str__(self):
-        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
-                                                self.__x, self.__y,
-                                                self.__width, self.__height))
-
+        return ("[Rectangle] ({}) {}/{} - {}/{}".
+                format(self.id, self.__x, self.__y, self.__width, self.__height))
 
     def update(self, *args, **kwargs):
         ''' update args in the class '''
@@ -99,8 +97,8 @@ class Rectangle(Base):
                 self.__setattr__(key, val)
             return
 
-        ''' 
-        setting each arg to its appropriate item 
+        '''
+        setting each arg to its appropriate item
         '''
         try:
             self.id = args[0]

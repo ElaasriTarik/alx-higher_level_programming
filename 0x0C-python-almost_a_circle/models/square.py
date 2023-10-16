@@ -30,7 +30,8 @@ class Square(Rectangle):
 
     def __str__(self):
 
-        return ("[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width))
+        return ("[Square] ({}) {}/{} - {}".
+                format(self.id, self.x, self.y, self.width))
 
     def update(self, *args, **kwargs):
         ''' update args in the class '''
@@ -40,8 +41,8 @@ class Square(Rectangle):
                 self.__setattr__(key, val)
             return
 
-        ''' 
-        setting each arg to its appropriate item 
+        '''
+        setting each arg to its appropriate item
         '''
         try:
             self.id = args[0]

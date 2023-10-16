@@ -20,12 +20,15 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
     @staticmethod
     def to_json_string(list_dictionaries):
         ''' return th json representation of list_dictionaries '''
 
-        return (json.dumps(list_dictionaries) if (list_dictionaries != "[]" and
-                                                  list_dictionaries is not None) else "[]")
+        return (json.dumps(list_dictionaries)
+                if (list_dictionaries != "[]" and
+                list_dictionaries is not None) else "[]")
+
     @classmethod
     def save_to_file(cls, list_objs):
         ''' save list_objs to cls file '''
@@ -44,7 +47,7 @@ class Base:
 
         return (json.loads(json_string) if (json_string != "[]" and
                                             json_string is not None) else "[]")
-    
+
     @classmethod
     def create(cls, **dictionary):
         new = cls(1, 2, 3, 4)
@@ -63,7 +66,6 @@ class Base:
                 return ([cls.create(**dic) for dic in list_dic])
         except IOError:
             return ([])
-
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
@@ -86,4 +88,3 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         ''' load from file csv '''
-
