@@ -88,3 +88,4 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         ''' load from file csv '''
+        return ([])
