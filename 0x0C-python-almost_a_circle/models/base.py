@@ -50,10 +50,17 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        new = cls(1, 2, 3, 4)
-        new.update(**dictionary)
+        ''' create '''
 
-        return (new)
+        from models.rectangle import Rectangle
+        from models.square import Square
+
+        if cls.__name__ == "Square":
+            cr2 = Square(5)
+        elif cls.__name__ == "Rectangle":
+            cr2 = Rectangle(3, 8)
+        cr2.update(**dictionary)
+        return (cr2)
 
     @classmethod
     def load_from_file(cls):
