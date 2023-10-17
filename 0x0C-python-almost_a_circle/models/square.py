@@ -29,7 +29,7 @@ class Square(Rectangle):
         self.height = value
 
     def __str__(self):
-
+        ''' str '''
         return ("[Square] ({}) {}/{} - {}".
                 format(self.id, self.x, self.y, self.width))
 
@@ -54,6 +54,7 @@ class Square(Rectangle):
             pass
 
     def to_dictionary(self):
+        ''' dictionary '''
         return {
             'id': self.id,
             'x': self.x,
