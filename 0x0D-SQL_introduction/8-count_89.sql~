@@ -1,0 +1,2 @@
+-- count --
+SELECT COUNT(id) AS 89;
