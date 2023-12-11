@@ -8,5 +8,5 @@ while (args[x]) {
   x++;
 }
 if (x <= 2) {
-  console.log('No arguments');
+  console.log('No argument');
 }
