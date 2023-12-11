@@ -4,7 +4,7 @@ const args = process.argv;
 if (args.length === 2) {
   console.log(0);
 } else if (args.length === 3) {
-  console.log(1);
+  console.log(0);
 } else {
   let big = 0;
   let sec = 0;
