@@ -7,6 +7,6 @@ while (args[x]) {
   }
   x++;
 }
-if (x === 2) {
+if (x <= 2) {
   console.log('No arguments');
 }
