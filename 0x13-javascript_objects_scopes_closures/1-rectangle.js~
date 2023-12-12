@@ -1,0 +1,10 @@
+#!/usr/bin/node
+class Rectangle {
+  width = 0;
+  height = 0;
+  constuctor(w, h) {
+    Rectangle.width = w;
+    Rectangle.height = h;
+  }
+}
+module.exports = Rectangle;
