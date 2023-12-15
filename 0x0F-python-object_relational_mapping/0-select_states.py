@@ -13,7 +13,7 @@ def start(usr, password, database):
         db=database
     )
     cur = con.cursor()
-    cur.execute("SELECT name FROM states ORDER BY id")
+    cur.execute("SELECT name FROM states")
     data = cur.fetchall()
     x = 1
     for row in data:
