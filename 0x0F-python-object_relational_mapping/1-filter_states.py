@@ -13,12 +13,12 @@ def start(usr, password, database):
         db=database
     )
     cur = con.cursor()
-    cur.execute("SELECT * FROM states")
+    cur.execute("SELECT * FROM states WHERE name \
+    LIKE BINARY 'N%' ORDER BY states.id")
     data = cur.fetchall()
     x = 1
     for row in data:
-        if row[1][0] == "N":
-            print(row)
+        print(row)
 
 
 if __name__ == "__main__":
