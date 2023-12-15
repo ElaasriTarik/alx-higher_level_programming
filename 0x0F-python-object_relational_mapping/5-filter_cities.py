@@ -20,10 +20,11 @@ def start(usr, password, database, keyword):
     cur.execute(query, (keyword,))
     data = cur.fetchall()
     x = 0
+    names = []
     if data is not None:
         for row in data:
-            print(row[0], end=", " if x < len(data) - 1 else "\n")
-            x += 1
+            names.append(row[0])
+        print(", ".join(names))
 
 
 if __name__ == "__main__":
