@@ -16,12 +16,12 @@ def start(usr, password, database, keyword):
     query = "SELECT cities.name \
     FROM cities JOIN states ON cities.state_id = states.id \
     WHERE states.name LIKE %s \
-    ORDER BY states.name, cities.id"
+    ORDER BY cities.id ASC"
     cur.execute(query, (keyword,))
     data = cur.fetchall()
     x = 1
     for row in data:
-        print(row[0], end=", " if x < 3 else "")
+        print(row[0], end=", " if x < 3 else "\n")
         x += 1
 
 
