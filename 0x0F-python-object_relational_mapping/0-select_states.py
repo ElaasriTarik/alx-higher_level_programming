@@ -13,13 +13,11 @@ def start(usr, password, database):
         db=database
     )
     cur = con.cursor()
-    cur.execute("SELECT name FROM states")
+    cur.execute("SELECT * FROM states")
     data = cur.fetchall()
     x = 1
     for row in data:
-        if x < 6:
-            print("({}, '{}')".format(x, row[0]))
-            x += 1
+        print(row)
 
 
 if __name__ == "__main__":
