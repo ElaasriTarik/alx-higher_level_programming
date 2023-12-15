@@ -13,8 +13,8 @@ def start(usr, password, database, search):
         db=database
     )
     cur = con.cursor()
-    cur.execute(f"SELECT * FROM states WHERE \
-    name LIKE BINARY '{search}'")
+    cur.execute("SELECT * FROM states WHERE \
+    name LIKE BINARY '{}' ORDER BY state.id".format(search))
     data = cur.fetchall()
     x = 1
     for row in data:
