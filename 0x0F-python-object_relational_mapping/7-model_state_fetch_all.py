@@ -15,7 +15,7 @@ def start(username, password, database):
     data = session.query(State).order_by(State.id)
 
     for row in data:
-        print(row.id, ":", row.name)
+        print("{}: {}".format(row.id, row.name))
 
 
 if __name__ == "__main__":
