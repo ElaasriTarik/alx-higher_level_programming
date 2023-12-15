@@ -14,7 +14,7 @@ def start(usr, password, database, search):
     )
     cur = con.cursor()
     cur.execute("SELECT * FROM states WHERE \
-    name LIKE BINARY '{}' ORDER BY state.id".format(search))
+    name LIKE BINARY '{}' ORDER BY id".format(search))
     data = cur.fetchall()
     x = 1
     for row in data:
