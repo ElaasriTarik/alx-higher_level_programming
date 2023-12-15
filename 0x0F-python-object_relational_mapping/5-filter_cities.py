@@ -21,7 +21,7 @@ def start(usr, password, database, keyword):
     data = cur.fetchall()
     x = 1
     for row in data:
-        print(row[0], end=", " if x < 3 else "\n")
+        print(row[0], end=", " if x < 3 else "")
         x += 1
 
 
