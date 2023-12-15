@@ -20,9 +20,10 @@ def start(usr, password, database, keyword):
     cur.execute(query, (keyword,))
     data = cur.fetchall()
     x = 1
-    for row in data:
-        print(row[0], end=", " if x < len(data) else "\n")
-        x += 1
+    if data is not None:
+        for row in data:
+            print(row[0], end=", " if x < len(data) else "\n")
+            x += 1
 
 
 if __name__ == "__main__":
