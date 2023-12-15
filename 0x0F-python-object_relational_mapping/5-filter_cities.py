@@ -19,10 +19,10 @@ def start(usr, password, database, keyword):
     ORDER BY cities.id ASC"
     cur.execute(query, (keyword,))
     data = cur.fetchall()
-    x = 1
+    x = 0
     if data is not None:
         for row in data:
-            print(row[0], end=", " if x < len(data) else "\n")
+            print(row[0], end=", " if x < len(data) - 1 else "\n")
             x += 1
 
 
