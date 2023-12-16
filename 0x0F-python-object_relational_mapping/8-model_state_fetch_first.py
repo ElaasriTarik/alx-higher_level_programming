@@ -12,12 +12,11 @@ def start(username, password, database):
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for data in session.query(State).order_by(State.id):
-        if data is not None:
-            print("{}: {}".format(row.id, row.name))
-            break
-        else:
-            print("Nothing")
+    if not session.query(State).first():
+        print("Nothing")
+        return
+    data = session.query(State).where(state.id == 1).order_by(State.id)
+    print("{}: {}".format(data.id, data.name))
 
 
 if __name__ == "__main__":
