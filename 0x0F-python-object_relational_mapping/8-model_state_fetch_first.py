@@ -12,10 +12,9 @@ def start(username, password, database):
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    data = session.query(State).where(state.id == 1).order_by(State.id)
+    data = session.query(State).where(State.id == 1).order_by(State.id)
     if data is None:
         print("Nothing")
-        return
     else:
         print("{}: {}".format(data.id, data.name))
 
