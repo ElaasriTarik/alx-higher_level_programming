@@ -13,7 +13,7 @@ def start(username, password, database):
     session = Session()
 
     to_update = session.query(State).where(State.id == 2) \
-        .order_by(state.id)
+        .order_by(state.id).first()
 
     to_update.name = "New Mexico"
     session.commit()
