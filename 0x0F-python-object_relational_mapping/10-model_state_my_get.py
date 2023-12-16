@@ -15,9 +15,8 @@ def start(username, password, database, search):
     data = session.query(State) \
                   .where(State.name.like("%{}%".format(search))) \
                   .order_by(State.id)
-    if data:
-        for d in data:
-            print("{}".format(d.id))
+    if data is not None:
+        print("{}".format(data.id))
     else:
         print("Not found")
 
