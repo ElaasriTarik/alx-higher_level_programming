@@ -13,9 +13,9 @@ def start(username, password, database):
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    data = session.query(City, State).join(State)
+    query = session.query(City, State).join(State)
 
-    for st, ci in data.all():
+    for ci, st in query.all():
         print("{}: ({}) {}".format(st.name, ci.id, ci.name))
 
     session.commit()
