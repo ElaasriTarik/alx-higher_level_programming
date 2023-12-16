@@ -13,12 +13,13 @@ def start(username, password, database):
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    data = session.query(City, State).join(State)
+    data = session.query(City, State).join(State).order_by(City.id)
 
     for st, ci in data:
         print("{}: ({}) {}".format(st.name, ci.id, ci.name))
 
     session.commit()
+    session.close()
 
 if __name__ == "__main__":
     username = sys.argv[1]
