@@ -15,8 +15,9 @@ def start(username, password, database):
     to_update = session.query(State).where(State.id == 2) \
         .order_by(state.id).first()
 
-    to_update.name = "New Mexico"
-    session.commit()
+    if to_update:
+        to_update.name = "New Mexico"
+        session.commit()
 
 
 if __name__ == "__main__":
