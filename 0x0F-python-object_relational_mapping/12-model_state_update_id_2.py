@@ -12,8 +12,7 @@ def start(username, password, database):
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    to_update = session.query(State).filter_by(id = 2) \
-                                    .first()
+    to_update = session.query(State).filter_by(id = 2).first()
 
     if to_update:
         to_update.name = "New Mexico"
