@@ -2,7 +2,7 @@
 """ fetching all """
 import sys
 from model_state import Base, State
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, bindparam
 from sqlalchemy.orm import sessionmaker
 
 
@@ -13,7 +13,8 @@ def start(username, password, database, search):
     session = Session()
 
     data = session.query(State) \
-                  .where(State.name.like("%{}%".format(search))).first()
+                  .where(State.name.like("%"+bindparam("search")+"%")) \
+                  .first()
     if data:
         print("{}".format(data.id))
     else:
