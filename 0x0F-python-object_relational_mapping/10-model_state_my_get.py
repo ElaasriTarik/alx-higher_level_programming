@@ -13,7 +13,7 @@ def start(username, password, database, search):
     session = Session()
 
     data = session.query(State) \
-                  .where(State.name.like("%{}%".format(search))) \
+                  .where(State.name == search) \
                   .first()
     if data is None:
         print("Not found")
