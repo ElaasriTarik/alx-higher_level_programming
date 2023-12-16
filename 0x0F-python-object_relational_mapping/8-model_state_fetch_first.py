@@ -16,7 +16,7 @@ def start(username, password, database):
     if data:
         print("{}: {}".format(data.id, data.name))
     else:
-        print("Nothing") 
+        print("Nothing")
 
 
 if __name__ == "__main__":
