@@ -16,7 +16,7 @@ def start(username, password, database):
     data = session.query(City, State).join(State).order_by(City.id)
 
     for row in data:
-        print("{}: ({}) {}".format(row.name, row, row.name))
+        print("{}: ({}) {}".format(row.name, row.id, row.name))
 
 
 if __name__ == "__main__":
