@@ -13,7 +13,7 @@ def start(username, password, database):
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    data = session.query(City, State).join(State).order_by(City.id)
+    data = session.query(City, State).join(State)
 
     for st, ci in data.all():
         print("{}: ({}) {}".format(st.name, ci.id, ci.name))
