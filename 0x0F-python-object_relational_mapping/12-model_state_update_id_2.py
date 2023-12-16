@@ -12,7 +12,7 @@ def start(username, password, database):
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    to_update = session.query(State).where(State.id == 2) \
+    to_update = session.query(State).where(State.id == '2') \
         .order_by(state.id).first()
 
     if to_update:
