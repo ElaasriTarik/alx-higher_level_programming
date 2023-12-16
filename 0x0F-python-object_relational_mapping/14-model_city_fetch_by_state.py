@@ -15,8 +15,8 @@ def start(username, password, database):
 
     data = session.query(City, State).join(State)
 
-    for row in data:
-        print("{}: ({}) {}".format(row.name, row.id, row.name))
+    for st, ci in data:
+        print("{}: ({}) {}".format(st.name, ci.id, ci.name))
 
     session.commit()
 
