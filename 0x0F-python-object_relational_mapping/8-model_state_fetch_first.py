@@ -15,8 +15,8 @@ def start(username, password, database):
     if not session.query(State).first():
         print("Nothing")
         return
-    data = session.query(State).where(state.id == 1).order_by(State.id)
-    print("{}: {}".format(data.id, data.name))
+    for data in session.query(State).where(state.id == 1).order_by(State.id):
+        print("{}: {}".format(data.id, data.name))
 
 
 if __name__ == "__main__":
