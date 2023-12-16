@@ -13,12 +13,12 @@ def start(username, password, database, search):
     session = Session()
 
     data = session.query(State) \
-                  .where(State.name.like("%"+bindparam("search")+"%")) \
+                  .where(State.name.like("%{}%".format(search))) \
                   .first()
-    if data:
-        print("{}".format(data.id))
-    else:
+    if data is None:
         print("Not found")
+    else:
+        print("{}".format(data.id))
 
 
 if __name__ == "__main__":
