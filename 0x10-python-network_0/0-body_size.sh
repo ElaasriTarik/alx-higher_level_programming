@@ -1,3 +1,3 @@
 #!/bin/bash
 # URL body size
-curl -s -I "$1" | grep 'Content-Lenght:' | cut -d' ' -f2
+curl -s -I "$1" | grep 'Content-Length:' | cut -d' ' -f2
