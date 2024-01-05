@@ -1,3 +1,3 @@
 #!/bin/bash
 # only status code
-curl -I "$1"
+curl -sL -I "$1"
