@@ -1,0 +1,4 @@
+#!/bin/bash
+# URL body size
+
+curl Content-Lenght $1
