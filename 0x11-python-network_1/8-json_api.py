@@ -15,9 +15,8 @@ req = requests.post(url, data={'q': letter})
 r = req.json()
 
 try:
-    d = r.json()
-    if d:
-        print("[{}] {}".format(d.get("id"), d.get("name")))
+    if r:
+        print("[{}] {}".format(r.get("id"), r.get("name")))
     else:
         print("No result")
 except ValueError:
