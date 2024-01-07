@@ -19,4 +19,4 @@ if (r >= 400):
 elif (r.lenght == 0):
     print('No result')
 else:
-    print('[{}] {}'.format(r.get("id"), r.("name")))
+    print('[{}] {}'.format(r.get("id"), r.get("name")))
