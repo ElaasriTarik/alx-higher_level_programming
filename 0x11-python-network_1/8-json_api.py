@@ -7,7 +7,7 @@ from sys import argv
 url = 'http://0.0.0.0:5000/search_user'
 letter = ""
 if len(argv) == 1:
-    letters = ""
+    letter = ""
 else:
     letter = argv[1][0]
 
