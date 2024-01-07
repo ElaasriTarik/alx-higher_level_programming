@@ -5,13 +5,7 @@ from sys import argv
 
 
 url = 'http://0.0.0.0:5000/search_user'
-letter = ""
-if len(argv) == 1:
-    letter = ""
-else:
-    letter = argv[1][0]
-
-req = requests.post(url, data={'q': letter})
+req = requests.post(url, data={'q': argv[1] if len(argv) > 1 else ""})
 
 try:
     r = req.json()
