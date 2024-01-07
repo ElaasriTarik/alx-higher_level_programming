@@ -7,8 +7,8 @@ from sys import argv
 if __name__ == "__main__":
     url = argv[1]
     try:
-        res = requests.get(url)
-        print(res.text)
+        with requests.get(url) as res:
+            print(res.text)
 
     except requests.exceptions.RequestException as e:
         res = requests.get(url)
