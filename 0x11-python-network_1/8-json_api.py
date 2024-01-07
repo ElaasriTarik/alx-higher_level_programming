@@ -7,16 +7,18 @@ from sys import argv
 url = 'http://0.0.0.0:5000/search_user'
 letter = ""
 if len(argv) == 1:
-    print('No result')
+    letters = ""
 else:
-    letter = argv[1]
+    letter = argv[1][0]
 
-req = requests.post(url, params={'q': letter})
+req = requests.post(url, data={'q': letter})
 r = req.json()
 
-if (r >= 400):
+try:
+    d = response.json()
+    if d:
+        print("[{}] {}".format(d.get("id"), d.get("name")))
+    else:
+        print("No result")
+except ValueError:
     print("Not a valid JSON")
-elif (r.lenght == 0):
-    print('No result')
-else:
-    print('[{}] {}'.format(r.get("id"), r.get("name")))
