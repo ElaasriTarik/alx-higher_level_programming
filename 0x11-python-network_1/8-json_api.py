@@ -12,9 +12,9 @@ else:
     letter = argv[1][0]
 
 req = requests.post(url, data={'q': letter})
-r = req.json()
 
 try:
+    r = req.json()
     if r:
         print("[{}] {}".format(r.get("id"), r.get("name")))
     else:
