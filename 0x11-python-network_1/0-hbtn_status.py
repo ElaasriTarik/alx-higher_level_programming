@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+"""what is my status """
+import urllib.request
+
+
+with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as res:
+    html = res.read()
+
+    print('Body response:')
+    print(f'    - type: {type(html)}')
+    print(f'    - content: {html}')
+    utff = html.decode('utf-8')
+    print(f'    - utf8 content: {utff}')
