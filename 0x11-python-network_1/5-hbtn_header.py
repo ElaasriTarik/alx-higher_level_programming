@@ -5,7 +5,7 @@
 import requests
 from sys import argv
 
-
-with requests.get(argv[1]) as res:
-    val = res.headers.get('X-Request-Id')
-    print(val)
+if __name__ == "__main__":
+    with requests.get(argv[1]) as res:
+        val = res.headers.get('X-Request-Id')
+        print(val)
