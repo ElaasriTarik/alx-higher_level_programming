@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """error code"""
 import urllib.request
-import urllib
+import urllib.error
 from sys import argv
 
 
