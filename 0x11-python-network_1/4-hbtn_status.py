@@ -4,8 +4,7 @@ import requests
 
 
 with requests.get('https://alx-intranet.hbtn.io/status') as res:
-    ct = res.headers.get('Content-Type')
-    content = res.headers.get('Content')
+    res = res.text
     print('Body response:')
-    print(f'\t- type: {type(ct)}')
+    print(f'\t- type: {type(res)}')
     print(f'\t- content: {res}')
