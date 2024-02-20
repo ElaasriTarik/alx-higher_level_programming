@@ -14,14 +14,16 @@ else {
 				if (Object.prototype.hasOwnProperty.call(users, `${user}`)) {
 					if (data[x].completed === true) {
 						users[`${user}`] += 1;
-						if (users[`${user}`] === 0) delete users[`${user}`];
 					}
 				} else {
 					users[`${user}`] = 0;
 				}
-
 			}
-			console.log(users);
+			const filteredObject = Object.fromEntries(
+				Object.entries(users).filter(([key, value]) => {
+					if (value !== 0) return key
+				}));
+			console.log(filteredObject);
 		}
 	});
 }
