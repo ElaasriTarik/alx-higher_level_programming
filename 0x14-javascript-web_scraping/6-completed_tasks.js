@@ -19,11 +19,12 @@ else {
 					users[`${user}`] = 0;
 				}
 			}
-			const filteredObject = Object.fromEntries(
-				Object.entries(users).filter(([key, value]) => {
-					if (value !== 0) return key
-				}));
-			console.log(filteredObject);
+			for (let key in users) {
+				if (users[key] === 0) {
+					delete users[key];
+				}
+			}
+			console.log(users);
 		}
 	});
 }
